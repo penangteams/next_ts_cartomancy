@@ -4,11 +4,13 @@ import styles from "./MyCard.module.css";
 import { diamonds, clubs, hearts, spades } from "./allcards";
 import { nanoid } from "nanoid";
 import { useSearchStore } from "@/contexts/store";
+import { motion, useTime, useTransform } from "framer-motion";
 
 export default function MyCard() {
   // const [list, setList] = useState<string[]>([]); // This should be your fetched list
   const search = useSearchStore((state) => state.searchTerm);
-
+  const time = useTime();
+  const rotate = useTransform(time, [0, 5000], [0, 360], { clamp: true });
   const spadess = <>&spades;</>;
   const diamss = <>&diams;</>;
   const clubss = <>&clubs;</>;
@@ -19,7 +21,7 @@ export default function MyCard() {
   const namehearts = `${styles.hearts}`;
   const allCards = diamonds.concat(clubs).concat(hearts).concat(spades);
   const initializeArrayWithValues = (n: number, val = 0) => Array(n).fill(val);
-  const arr1 = initializeArrayWithValues(52, 1); //make it 52 length on the left side, right is just a value
+  //const arr1 = initializeArrayWithValues(52, 1); //make it 52 length on the left side, right is just a value
   const filteredList = allCards.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -38,29 +40,61 @@ export default function MyCard() {
                   key={nanoid()}
                 >
                   {el.name.includes("hearts") && (
-                    <div className={`${styles.card} ${el.sty} ${namehearts}`}>
+                    <motion.div
+                      className={`${styles.card} ${el.sty} ${namehearts}`}
+                      // animate={{
+                      //   scale: [1, 2, 2, 1, 1],
+                      //   rotate: [0, 0, 270, 270, 0],
+                      //   borderRadius: ["20%", "20%", "50%", "50%", "20%", "0%"],
+                      // }}
+                      style={{ rotate }}
+                    >
                       <span className={styles.rank}>{el.uniq}</span>
                       <span className={styles.suit}>{heartss}</span>
-                    </div>
+                    </motion.div>
                   )}
 
                   {el.name.includes("spade") && (
-                    <div className={`${styles.card} ${el.sty} ${namespades}`}>
+                    <motion.div
+                      className={`${styles.card} ${el.sty} ${namespades}`}
+                      // animate={{
+                      //   scale: [1, 2, 2, 1, 1],
+                      //   rotate: [0, 0, 180, 180, 0],
+                      //   borderRadius: ["20%", "20%", "50%", "50%", "20%", "0%"],
+                      // }}
+                      style={{ rotate }}
+                    >
                       <span className={styles.rank}>{el.uniq}</span>
                       <span className={styles.suit}>{spadess}</span>
-                    </div>
+                    </motion.div>
                   )}
                   {el.name.includes("diamond") && (
-                    <div className={`${styles.card} ${el.sty} ${namediams}`}>
+                    <motion.div
+                      className={`${styles.card} ${el.sty} ${namediams}`}
+                      // animate={{
+                      //   scale: [1, 2, 2, 1, 1],
+                      //   rotate: [0, 0, 270, 270, 0],
+                      //   borderRadius: ["20%", "20%", "50%", "50%", "20%", "0%"],
+                      // }}
+                      style={{ rotate }}
+                    >
                       <span className={styles.rank}>{el.uniq}</span>
                       <span className={styles.suit}>{diamss}</span>
-                    </div>
+                    </motion.div>
                   )}
                   {el.name.includes("clubs") && (
-                    <div className={`${styles.card} ${el.sty} ${nameclubs}`}>
+                    <motion.div
+                      className={`${styles.card} ${el.sty} ${nameclubs}`}
+                      // animate={{
+                      //   scale: [1, 2, 2, 1, 1],
+                      //   rotate: [0, 0, 180, 180, 0],
+                      //   borderRadius: ["20%", "20%", "50%", "50%", "20%", "0%"],
+                      // }}
+                      style={{ rotate }}
+                    >
                       <span className={styles.rank}>{el.uniq}</span>
                       <span className={styles.suit}>{clubss}</span>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               );
