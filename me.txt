@@ -1,5 +1,5 @@
 Uses nextjs for cartomancy project.
-
+ZUSTAND demo nice: https://www.youtube.com/watch?v=3xwETw0MAHQ
 
 https://dev.to/aanis434/how-to-deploy-a-react-nextjs-application-with-apache2-on-ubuntu-in-aws-ec2-instance-221o
 
