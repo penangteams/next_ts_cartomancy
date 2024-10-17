@@ -1,3 +1,5 @@
+/** @format */
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -7,7 +9,10 @@ interface BearState {
   decreaseBears: () => void;
   removeAllBears: () => void;
 }
-
+interface SearchState {
+  searchTerm: string;
+  setSearchTerm: (searchTerm: string) => void;
+}
 export const useBearStore = create<BearState>()(
   persist(
     (set) => ({
@@ -18,6 +23,18 @@ export const useBearStore = create<BearState>()(
     }),
     {
       name: "bear store",
+    }
+  )
+);
+
+export const useSearchStore = create<SearchState>()(
+  persist(
+    (set) => ({
+      searchTerm: "",
+      setSearchTerm: (searchTerm: string) => set(() => ({ searchTerm })),
+    }),
+    {
+      name: "search store",
     }
   )
 );
