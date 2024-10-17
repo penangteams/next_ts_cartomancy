@@ -1,6 +1,9 @@
 Uses nextjs for cartomancy project.
 ZUSTAND demo nice: https://www.youtube.com/watch?v=3xwETw0MAHQ
 
+Symbols used:
+https://www.toptal.com/designers/htmlarrows/symbols/black-chess-pawn/
+
 https://dev.to/aanis434/how-to-deploy-a-react-nextjs-application-with-apache2-on-ubuntu-in-aws-ec2-instance-221o
 
 1) run,
@@ -35,3 +38,4 @@ systemctl reload apache2
 to get SSL:
 sudo certbot -d nextjs.wintech.homes -d www.nextjs.wintech.homes
 A congrats message will come together with auto created: nextcarto-le-ssl.conf 
+
