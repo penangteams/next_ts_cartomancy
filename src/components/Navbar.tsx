@@ -12,7 +12,7 @@ const Navbar = () => {
         <Searchbox />
         <div className="ml-auto mr-3 ">
           <button className="bg-yellow-400 text-black rounded px-3 py-2">
-            Some Action
+            Action
           </button>
         </div>
       </nav>
