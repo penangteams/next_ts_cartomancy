@@ -3,7 +3,6 @@
 import styles from "./MyCard.module.css";
 import { diamonds, clubs, hearts, spades } from "./allcards";
 import { nanoid } from "nanoid";
-import { useState } from "react";
 import { useSearchStore } from "@/contexts/store";
 
 export default function MyCard() {

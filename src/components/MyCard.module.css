@@ -106,7 +106,7 @@
 .playingCards .card .rank {
 }
 .playingCards .card .suit {
-    line-height: .7;
+    line-height: 1.2;
 }
 
 /* checkbox */
@@ -176,14 +176,24 @@
     word-spacing: -.15em;
 }
 .playingCards .card.hearts.rank_10 .suit:after {
-    word-spacing: -.05em;
+    word-spacing: -.4em;
     letter-spacing: -.1em;
     margin-top: 10px;
 }
 .playingCards .card.clubs.rank_10 .suit:after {
-    word-spacing: -.15em;
+    word-spacing: -.4em;
     margin-top: 10px;
 }
+
+.playingCards .card.diams.rank_10 .suit:after {
+    word-spacing: -.4em;
+
+}
+.playingCards .card.spades.rank_10 .suit:after {
+    word-spacing: -.4em;
+  
+}
+
 
 /* 8, 9, 10 are the most crowded */
 .playingCards .card.rank_8 .suit:after,
