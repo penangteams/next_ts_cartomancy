@@ -1,1 +1,37 @@
 Uses nextjs for cartomancy project.
+
+
+https://dev.to/aanis434/how-to-deploy-a-react-nextjs-application-with-apache2-on-ubuntu-in-aws-ec2-instance-221o
+
+1) run,
+npm run build at the VPS
+2) at the folder, pm2 start npm --name "nextjs_cartomancy" -- start -- --port=3009
+3) pm2 save
+4) allow ufw at port 3009
+
+Now apache config:
+nano nextcarto.conf
+then....*:
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@yourdomain.com
+    DocumentRoot /var/www/next_ts_cartomancy
+
+ServerName nextjs.wintech.homes
+ServerAlias www.nextjs.wintech.homes
+
+# has Nuxt runs on port 3009
+    ProxyPass / http://127.0.0.1:3009/
+    ProxyPassReverse / http://127.0.0.1:3009/
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+</VirtualHost>
+a2ensite nextcarto.conf
+systemctl reload apache2
+
+to get SSL:
+sudo certbot -d nextjs.wintech.homes -d www.nextjs.wintech.homes
+A congrats message will come together with auto created: nextcarto-le-ssl.conf 
