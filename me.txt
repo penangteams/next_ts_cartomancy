@@ -1,10 +1,16 @@
 Uses nextjs for cartomancy project.
 ZUSTAND demo nice: https://www.youtube.com/watch?v=3xwETw0MAHQ
 
+Button collection:
+https://devdojo.com/tailwindcss/buttons?utm_source=tailkits&utm_medium=referral&utm_campaign=components
+
 Symbols used:
 https://www.toptal.com/designers/htmlarrows/symbols/black-chess-pawn/
 
 https://dev.to/aanis434/how-to-deploy-a-react-nextjs-application-with-apache2-on-ubuntu-in-aws-ec2-instance-221o
+
+React Hot Toast: custom toast options:
+https://codesandbox.io/p/sandbox/react-hot-toast-custom-toast-dismiss-re8xhs?file=%2Fsrc%2FApp.js%3A18%2C4-20%2C6
 
 1) run,
 npm run build at the VPS
