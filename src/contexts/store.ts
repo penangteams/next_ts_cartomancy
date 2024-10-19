@@ -2,13 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-interface ITypes {
-  id: string;
-  name?: string;
-  uniq?: string;
-  sty?: string;
-}
+import { ITypes } from "@/app/types/MyCard.types";
 
 interface BearState {
   bears: number;

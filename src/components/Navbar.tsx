@@ -12,13 +12,13 @@ const Navbar = () => {
         <ModeToggle />
         <Searchbox />
         <div className="ml-auto mr-3 mt-2 ">
-          <Link
+          {/* <Link
             href="/"
             type="button"
             className="bg-[#1E3250] text-white rounded px-3 py-2 mr-2"
           >
             Home
-          </Link>
+          </Link> */}
           <Link
             href="/admin"
             type="button"

@@ -8,6 +8,7 @@ import { motion, useTime, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { notify } from "./CustomToaster";
+import { ITypes } from "@/app/types/MyCard.types";
 
 let imgUrl =
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=6GHAjsWpt9&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80";
@@ -31,25 +32,13 @@ export default function MyCard() {
   const namespades = `${styles.spades}`;
   const namehearts = `${styles.hearts}`;
   const allCards = diamonds.concat(clubs).concat(hearts).concat(spades);
-  interface ITypes {
-    id: string;
-    name?: string;
-    uniq?: string;
-    sty?: string;
-  }
-  interface ITypes2 {
-    id: string;
-    name: string;
-    uniq: string;
-    sty: string;
-  }
   const [packs, setPacks] = useState<ITypes[]>([]);
   //const initializeArrayWithValues = (n: number, val = 0) => Array(n).fill(val);
   //const arr1 = initializeArrayWithValues(52, 1); //make it 52 length on the left side, right is just a value
   const filteredList = allCards.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
-  var genre_array: ITypes2[] = [];
+  var genre_array: ITypes[] = [];
   function getPacks(e: ITypes) {
     packs.forEach(function (e) {
       allCards.forEach(function (element) {

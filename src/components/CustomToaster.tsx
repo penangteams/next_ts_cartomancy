@@ -2,12 +2,7 @@
 
 import toast from "react-hot-toast";
 import { Flag } from "lucide-react";
-
-interface Iprops {
-  imgUrl: string;
-  literal1?: string;
-  literal2?: string;
-}
+import { Iprops } from "@/app/types/CustomToaster.types";
 
 // toast.success("Look at my styles.", {
 //   style: {

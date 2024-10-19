@@ -1,3 +1,6 @@
+How to mange types?
+https://stackademic.com/blog/react-typescript-folder-structure-to-follow-ae614e786f8a
+
 Uses nextjs for cartomancy project.
 ZUSTAND demo nice: https://www.youtube.com/watch?v=3xwETw0MAHQ
 
