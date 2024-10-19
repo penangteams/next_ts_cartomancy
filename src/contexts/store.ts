@@ -3,6 +3,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+interface ITypes {
+  id: string;
+  name?: string;
+  uniq?: string;
+  sty?: string;
+}
+
 interface BearState {
   bears: number;
   increaseBears: () => void;
@@ -13,6 +20,13 @@ interface SearchState {
   searchTerm: string;
   setSearchTerm: (searchTerm: string) => void;
 }
+
+interface PacksState {
+  myPacks: ITypes[];
+  setmyPacks: (myPacks: ITypes[]) => void;
+  removePacks: () => void;
+}
+
 export const useBearStore = create<BearState>()(
   persist(
     (set) => ({
@@ -35,6 +49,19 @@ export const useSearchStore = create<SearchState>()(
     }),
     {
       name: "search store",
+    }
+  )
+);
+
+export const usePackStore = create<PacksState>()(
+  persist(
+    (set) => ({
+      myPacks: <ITypes[]>[],
+      setmyPacks: (myPacks: ITypes[]) => set(() => ({ myPacks })),
+      removePacks: () => set({ myPacks: [] }),
+    }),
+    {
+      name: "pack store",
     }
   )
 );

@@ -3,7 +3,7 @@
 import styles from "./MyCard.module.css";
 import { diamonds, clubs, hearts, spades } from "./allcards";
 import { nanoid } from "nanoid";
-import { useSearchStore } from "@/contexts/store";
+import { useSearchStore, usePackStore } from "@/contexts/store";
 import { motion, useTime, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
@@ -15,6 +15,9 @@ let imgUrl =
 export default function MyCard() {
   // const [list, setList] = useState<string[]>([]); // This should be your fetched list
   const search = useSearchStore((state) => state.searchTerm);
+  // const mpacks = usePackStore((state) => state.myPacks);
+  const setMpacks = usePackStore((state) => state.setmyPacks);
+  const rmPacks = usePackStore((state) => state.removePacks);
   const time = useTime();
   const rotate = useTransform(time, [0, 5000], [0, 360], {
     clamp: true,
@@ -30,6 +33,15 @@ export default function MyCard() {
   const allCards = diamonds.concat(clubs).concat(hearts).concat(spades);
   interface ITypes {
     id: string;
+    name?: string;
+    uniq?: string;
+    sty?: string;
+  }
+  interface ITypes2 {
+    id: string;
+    name: string;
+    uniq: string;
+    sty: string;
   }
   const [packs, setPacks] = useState<ITypes[]>([]);
   //const initializeArrayWithValues = (n: number, val = 0) => Array(n).fill(val);
@@ -37,6 +49,21 @@ export default function MyCard() {
   const filteredList = allCards.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
+  var genre_array: ITypes2[] = [];
+  function getPacks(e: ITypes) {
+    packs.forEach(function (e) {
+      allCards.forEach(function (element) {
+        if (element.id === e.id) {
+          genre_array.push(element);
+        }
+      });
+    });
+    setMpacks(genre_array.slice(0, 3));
+  }
+
+  useEffect(() => {
+    rmPacks(); //remove all packs on loading the page
+  }, []);
 
   useEffect(() => {
     let length = packs.length;
@@ -55,6 +82,14 @@ export default function MyCard() {
     } else {
       notify({ imgUrl, literal2 });
     }
+
+    if (packs.length === 3) {
+      for (var i = 0; i < packs.length; i++) {
+        getPacks(packs[i]);
+      }
+    }
+
+    console.log("packs", packs.slice(0, 3)); //take first 3 elements
   }, [packs]);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {

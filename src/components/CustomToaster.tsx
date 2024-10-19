@@ -1,6 +1,7 @@
 /** @format */
 
 import toast from "react-hot-toast";
+import { Flag } from "lucide-react";
 
 interface Iprops {
   imgUrl: string;
@@ -37,12 +38,19 @@ const notify = ({ imgUrl, literal1, literal2 }: Iprops) =>
               <p className="text-sm font-medium text-gray-900 dark:text-yellow-200">
                 Packs choosing now...
               </p>
-              <p className="mt-1 text-sm text-gray-500 dark:text-yellow-200">
-                {literal1}
-              </p>
-              <p className="mt-1 text-sm text-gray-500 dark:text-yellow-200">
-                {literal2}
-              </p>
+              {literal1 && (
+                <p className="mt-1 text-sm text-gray-500 dark:text-yellow-200">
+                  {literal1}
+                </p>
+              )}
+              {literal2 && (
+                <span className="flex">
+                  <Flag size={32} color="#ec3232" strokeWidth={3} />
+                  <p className="ml-2 mt-1 text-sm text-gray-500 dark:text-yellow-200">
+                    {literal2}
+                  </p>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -57,7 +65,7 @@ const notify = ({ imgUrl, literal1, literal2 }: Iprops) =>
       </div>
     ),
     {
-      duration: 5000,
+      duration: 3000,
       position: "bottom-left",
     }
   );
