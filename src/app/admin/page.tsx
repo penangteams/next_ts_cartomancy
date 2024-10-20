@@ -49,8 +49,8 @@ export default function AdminPage() {
                         </div>
                       </span>
                       <p className="text-sm text-justify border-2 border-green-600 px-2 rounded-lg">
-                        Actually brunch messenger bag, you probably haven't
-                        heard of them cliche pinterest truffaut enamel pin
+                        Actually brunch messenger bag, you probably havent heard
+                        of them cliche pinterest truffaut enamel pin
                         chicharrones schlitz. Slow-carb hell of cardigan
                         church-key pug skateboard. PBR&B artisan affogato,
                         locavore cupping blue bottle keffiyeh poutine XOXO
@@ -72,8 +72,8 @@ export default function AdminPage() {
                         </div>
                       </span>
                       <p className="text-sm text-justify border-2 border-pink-400 px-2 rounded-lg">
-                        Actually brunch messenger bag, you probably haven't
-                        heard of them cliche pinterest truffaut enamel pin
+                        Actually brunch messenger bag, you probably havent heard
+                        of them cliche pinterest truffaut enamel pin
                         chicharrones schlitz. Slow-carb hell of cardigan
                         church-key pug skateboard. PBR&B artisan affogato,
                         locavore cupping blue bottle keffiyeh poutine XOXO
@@ -95,8 +95,8 @@ export default function AdminPage() {
                         </div>
                       </span>
                       <p className="text-sm text-justify border-2 border-orange-300 px-2 rounded-lg">
-                        Actually brunch messenger bag, you probably haven't
-                        heard of them cliche pinterest truffaut enamel pin
+                        Actually brunch messenger bag, you probably havent heard
+                        of them cliche pinterest truffaut enamel pin
                         chicharrones schlitz. Slow-carb hell of cardigan
                         church-key pug skateboard. PBR&B artisan affogato,
                         locavore cupping blue bottle keffiyeh poutine XOXO
@@ -118,8 +118,8 @@ export default function AdminPage() {
                         </div>
                       </span>
                       <p className="text-sm text-justify border-2 border-purple-400 px-2 rounded-lg">
-                        Actually brunch messenger bag, you probably haven't
-                        heard of them cliche pinterest truffaut enamel pin
+                        Actually brunch messenger bag, you probably havent heard
+                        of them cliche pinterest truffaut enamel pin
                         chicharrones schlitz. Slow-carb hell of cardigan
                         church-key pug skateboard. PBR&B artisan affogato,
                         locavore cupping blue bottle keffiyeh poutine XOXO
