@@ -5,8 +5,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Hydration from "@/contexts/hydration";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navi1 from "@/components/Navi1";
+
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navi1 />
+          <Navbar />
           <main className="container min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
