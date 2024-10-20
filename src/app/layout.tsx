@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import NavbarResp from "@/components/NavbarResp";
+//import NavbarResp from "@/components/NavbarResp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,8 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Navbar /> */}
-          <NavbarResp />
+          <Navbar />
+          {/* <NavbarResp /> */}
           <main className="container min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
