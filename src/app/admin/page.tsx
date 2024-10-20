@@ -5,15 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "../../components/MyCard.module.css";
 import { nanoid } from "nanoid";
 import { ITypes } from "@/app/types/MyCard.types";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { TableUsers } from "@/components/TableUsers";
 
 const spadess = <>&spades;</>;
 const diamss = <>&diams;</>;
@@ -47,29 +39,95 @@ export default function AdminPage() {
                   key={nanoid()}
                 >
                   {el?.name?.includes("hearts") && (
-                    <>
-                      <div className={`${styles.card} ${el.sty} ${namehearts}`}>
-                        <span className={styles.rank}>{el.uniq}</span>
-                        <span className={styles.suit}>{heartss}</span>
-                      </div>
-                    </>
+                    <div className="flex flex-col">
+                      <span className="flex justify-center">
+                        <div
+                          className={`${styles.card} ${el.sty} ${namehearts}`}
+                        >
+                          <span className={styles.rank}>{el.uniq}</span>
+                          <span className={styles.suit}>{heartss}</span>
+                        </div>
+                      </span>
+                      <p className="text-sm text-justify border-2 border-green-600 px-2 rounded-lg">
+                        Actually brunch messenger bag, you probably haven't
+                        heard of them cliche pinterest truffaut enamel pin
+                        chicharrones schlitz. Slow-carb hell of cardigan
+                        church-key pug skateboard. PBR&B artisan affogato,
+                        locavore cupping blue bottle keffiyeh poutine XOXO
+                        organic. Health goth gluten-free mumblecore
+                        farm-to-table, copper mug flexitarian pour-over grailed
+                        PBR&B aesthetic raw denim umami heirloom forage. Selfies
+                        thundercats kickstarter venmo edison bulb post-ironic.
+                      </p>
+                    </div>
                   )}
                   {el?.name?.includes("spade") && (
-                    <div className={`${styles.card} ${el.sty} ${namespades}`}>
-                      <span className={styles.rank}>{el.uniq}</span>
-                      <span className={styles.suit}>{spadess}</span>
+                    <div className="flex flex-col">
+                      <span className="flex justify-center">
+                        <div
+                          className={`${styles.card} ${el.sty} ${namespades}`}
+                        >
+                          <span className={styles.rank}>{el.uniq}</span>
+                          <span className={styles.suit}>{spadess}</span>
+                        </div>
+                      </span>
+                      <p className="text-sm text-justify border-2 border-pink-400 px-2 rounded-lg">
+                        Actually brunch messenger bag, you probably haven't
+                        heard of them cliche pinterest truffaut enamel pin
+                        chicharrones schlitz. Slow-carb hell of cardigan
+                        church-key pug skateboard. PBR&B artisan affogato,
+                        locavore cupping blue bottle keffiyeh poutine XOXO
+                        organic. Health goth gluten-free mumblecore
+                        farm-to-table, copper mug flexitarian pour-over grailed
+                        PBR&B aesthetic raw denim umami heirloom forage. Selfies
+                        thundercats kickstarter venmo edison bulb post-ironic.
+                      </p>
                     </div>
                   )}
                   {el?.name?.includes("diamond") && (
-                    <div className={`${styles.card} ${el.sty} ${namediams}`}>
-                      <span className={styles.rank}>{el.uniq}</span>
-                      <span className={styles.suit}>{diamss}</span>
+                    <div className="flex flex-col">
+                      <span className="flex justify-center">
+                        <div
+                          className={`${styles.card} ${el.sty} ${namediams}`}
+                        >
+                          <span className={styles.rank}>{el.uniq}</span>
+                          <span className={styles.suit}>{diamss}</span>
+                        </div>
+                      </span>
+                      <p className="text-sm text-justify border-2 border-orange-300 px-2 rounded-lg">
+                        Actually brunch messenger bag, you probably haven't
+                        heard of them cliche pinterest truffaut enamel pin
+                        chicharrones schlitz. Slow-carb hell of cardigan
+                        church-key pug skateboard. PBR&B artisan affogato,
+                        locavore cupping blue bottle keffiyeh poutine XOXO
+                        organic. Health goth gluten-free mumblecore
+                        farm-to-table, copper mug flexitarian pour-over grailed
+                        PBR&B aesthetic raw denim umami heirloom forage. Selfies
+                        thundercats kickstarter venmo edison bulb post-ironic.
+                      </p>
                     </div>
                   )}
                   {el?.name?.includes("clubs") && (
-                    <div className={`${styles.card} ${el.sty} ${nameclubs}`}>
-                      <span className={styles.rank}>{el.uniq}</span>
-                      <span className={styles.suit}>{clubss}</span>
+                    <div className="flex flex-col">
+                      <span className="flex justify-center">
+                        <div
+                          className={`${styles.card} ${el.sty} ${nameclubs}`}
+                        >
+                          <span className={styles.rank}>{el.uniq}</span>
+                          <span className={styles.suit}>{clubss}</span>
+                        </div>
+                      </span>
+                      <p className="text-sm text-justify border-2 border-purple-400 px-2 rounded-lg">
+                        Actually brunch messenger bag, you probably haven't
+                        heard of them cliche pinterest truffaut enamel pin
+                        chicharrones schlitz. Slow-carb hell of cardigan
+                        church-key pug skateboard. PBR&B artisan affogato,
+                        locavore cupping blue bottle keffiyeh poutine XOXO
+                        organic. Health goth gluten-free mumblecore
+                        farm-to-table, copper mug flexitarian pour-over grailed
+                        PBR&B aesthetic raw denim umami heirloom forage. Selfies
+                        thundercats kickstarter venmo edison bulb post-ironic.
+                      </p>
                     </div>
                   )}
                 </div>
@@ -79,44 +137,9 @@ export default function AdminPage() {
         </div>
       </div>
       <div className="w-full sm:p-4">
+        <TableUsers />
         <h2 className="p-4">All links</h2>
-        <div className="rounded-md sm:border">
-          <Table>
-            <TableCaption>A list of your recent invoices.</TableCaption>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]">Invoice</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Method</TableHead>
-                <TableHead>Booked</TableHead>
-                <TableHead className="text-right">Amount</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">INV001</TableCell>
-                <TableCell>Paid</TableCell>
-                <TableCell>Credit Card</TableCell>
-                <TableCell>Agent Daniel has booked it</TableCell>
-                <TableCell className="text-right">$250.00</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV002</TableCell>
-                <TableCell>Paid</TableCell>
-                <TableCell>Credit Card</TableCell>{" "}
-                <TableCell>Agent Daniel has booked it</TableCell>
-                <TableCell className="text-right">$50.00</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV003</TableCell>
-                <TableCell>Paid</TableCell>
-                <TableCell>Credit Card</TableCell>
-                <TableCell>Agent Daniel has booked it</TableCell>
-                <TableCell className="text-right">$66500000000.00</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
+        <div className="rounded-md sm:border"></div>
       </div>
     </>
   );
